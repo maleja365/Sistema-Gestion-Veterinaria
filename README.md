@@ -83,7 +83,7 @@ Para ejecutar el proyecto se requiere:
 
 Clonar el repositorio de GitHub:
 
-https://github.com/maleja365/Sistema-Gestion-Veterinaria por la dirección real del repositorio.
+https://github.com/maleja365/Sistema-Gestion-Veterinaria 
 
 Abrir el proyecto en Visual Studio Code y localizar las carpetas correspondientes al frontend y al backend.
 
@@ -138,7 +138,7 @@ Esta sección debe incluir:
 - Relaciones entre las entidades.
 - Script SQL para crear o importar la base de datos, si está disponible.
 
-**Diagrama de la base de datos:** agregar aquí la imagen o el enlace correspondiente.
+**Diagrama de la base de datos:**
 
 
 

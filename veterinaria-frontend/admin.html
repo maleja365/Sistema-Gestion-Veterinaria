@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador | VetCare</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="panel">
+  <aside class="lateral">
+    <div class="logo"><img src="img/logo.svg" alt=""><span>VetCare<small>ADMINISTRADOR</small></span></div>
+    <p class="menu-etiqueta">MENÚ</p>
+    <button class="menu" data-vista="vets">🩺 Gestionar veterinarios</button>
+    <button class="menu" data-vista="stats">📊 Estadísticas</button>
+    <div class="usuario-box">
+      <div class="avatar" id="u-avatar">A</div>
+      <div><strong id="u-nombre">…</strong><small>Administrador</small></div>
+      <button class="salir" id="btn-salir" title="Cerrar sesión">⏻</button>
+    </div>
+  </aside>
+
+  <main class="principal">
+    <div class="banner">
+      <div>
+        <h2>Panel de administración ⚙️</h2>
+        <p>Registra a los veterinarios de la clínica y consulta las estadísticas del sistema.</p>
+      </div>
+      <div class="trio"><img src="img/perro.svg" alt=""><img src="img/gato.svg" alt=""><img src="img/conejo.svg" alt=""></div>
+    </div>
+
+    <section class="vista" id="vista-vets">
+      <div class="cabecera">
+        <div><span class="etiqueta">EQUIPO</span><h1>Veterinarios</h1></div>
+        <button class="btn" id="btn-nuevo">+ Registrar veterinario</button>
+      </div>
+      <div class="tarjeta"><div class="tabla-wrap" id="tabla-vets"></div></div>
+    </section>
+
+    <section class="vista" id="vista-stats" hidden>
+      <div class="cabecera"><div><span class="etiqueta">RESUMEN</span><h1>Estadísticas</h1></div></div>
+      <div class="kpis" id="kpis"></div>
+      <div class="fila">
+        <div class="tarjeta"><h3>Citas por estado</h3><div id="barras-citas"></div></div>
+        <div class="tarjeta"><h3>Mascotas por especie</h3><div id="barras-especies"></div></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<dialog id="dlg-vet">
+  <h3 id="t-vet">Registrar veterinario</h3>
+  <div id="err-vet" class="alerta alerta-error" hidden></div>
+  <form id="form-vet">
+    <label>Nombre completo</label><input id="v-nombre" maxlength="100" required>
+    <label>Correo electrónico</label><input type="email" id="v-correo" maxlength="120" required>
+    <label id="l-pass">Contraseña (mínimo 8 caracteres)</label>
+    <input type="password" id="v-pass" autocomplete="new-password">
+    <div class="cerrar-fila">
+      <button type="button" class="btn btn-suave" data-cerrar>Cancelar</button>
+      <button class="btn" type="submit">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/ver-password.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | VetCare</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<main class="auth">
+  <section class="auth-marca">
+    <span class="etiqueta">CUIDADO ANIMAL</span>
+    <h1>VetCare</h1>
+    <p>La salud de tus mascotas, nuestra prioridad.</p>
+    <div class="trio">
+      <img src="img/perro.svg" alt="Perro">
+      <img src="img/gato.svg" alt="Gato">
+      <img src="img/conejo.svg" alt="Conejo">
+    </div>
+  </section>
+
+  <section class="auth-form">
+    <div class="auth-caja">
+      <span class="etiqueta" style="color:var(--blue-600)">BIENVENIDO</span>
+      <h2>Inicia sesión</h2>
+      <p class="sub">Ingresa tus credenciales para continuar.</p>
+
+      <div id="msg-salida" class="alerta alerta-ok" hidden>Has cerrado sesión correctamente.</div>
+      <div id="msg-registro" class="alerta alerta-ok" hidden>¡Cuenta creada! Ya puedes iniciar sesión.</div>
+      <div id="msg-error" class="alerta alerta-error" hidden></div>
+
+      <form id="form-login">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" placeholder="tucorreo@ejemplo.com" autocomplete="username" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Tu contraseña" autocomplete="current-password" required>
+
+        <button class="btn btn-block" type="submit">Ingresar →</button>
+      </form>
+
+      <p class="auth-pie">¿Eres propietario y no tienes cuenta? <a href="registro.html">Regístrate</a></p>
+    </div>
+  </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/login.js"></script>
+<script src="js/ver-password.js"></script>
+</body>
+</html>

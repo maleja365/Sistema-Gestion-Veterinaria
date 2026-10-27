@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinario | VetCare</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="panel">
+  <aside class="lateral">
+    <div class="logo"><img src="img/logo.svg" alt=""><span>VetCare<small>VETERINARIO</small></span></div>
+    <p class="menu-etiqueta">MENÚ</p>
+    <button class="menu" data-vista="citas">📅 Gestionar citas</button>
+    <button class="menu" data-vista="mascotas">🐾 Consultar mascotas</button>
+    <div class="usuario-box">
+      <div class="avatar" id="u-avatar">V</div>
+      <div><strong id="u-nombre">…</strong><small>Veterinario</small></div>
+      <button class="salir" id="btn-salir" title="Cerrar sesión">⏻</button>
+    </div>
+  </aside>
+
+  <main class="principal">
+    <div class="banner">
+      <div>
+        <h2>Panel del veterinario 🩺</h2>
+        <p>Gestiona tus citas, registra diagnósticos y vacunas, y consulta a los pacientes.</p>
+      </div>
+      <div class="trio"><img src="img/perro.svg" alt=""><img src="img/gato.svg" alt=""><img src="img/conejo.svg" alt=""></div>
+    </div>
+
+    <section class="vista" id="vista-citas">
+      <div class="cabecera"><div><span class="etiqueta">AGENDA</span><h1>Citas asignadas</h1></div></div>
+      <div class="tarjeta"><div class="tabla-wrap" id="tabla-citas"></div></div>
+    </section>
+
+    <section class="vista" id="vista-mascotas" hidden>
+      <div class="cabecera"><div><span class="etiqueta">PACIENTES</span><h1>Mascotas</h1></div></div>
+      <div id="lista-mascotas" class="mascotas"></div>
+    </section>
+  </main>
+</div>
+
+<!-- Historial / vacunas + registrar -->
+<dialog id="dlg-clinico">
+  <div class="cab-dialogo"><img id="cl-img" src="img/otro.svg" alt=""><h3 id="cl-titulo"></h3></div>
+  <div id="cl-contenido"></div>
+
+  <form id="form-registro" style="margin-top:14px">
+    <div id="err-reg" class="alerta alerta-error" hidden></div>
+    <div id="campos-diag">
+      <label>Diagnóstico</label><textarea id="d-desc" maxlength="500"></textarea>
+      <label>Tratamiento (opcional)</label><textarea id="d-trat" maxlength="500"></textarea>
+    </div>
+    <div id="campos-vac" hidden>
+      <label>Nombre de la vacuna</label><input id="v-nombre" maxlength="100">
+      <div class="fila">
+        <div><label>Fecha de aplicación</label><input type="date" id="v-fecha"></div>
+        <div><label>Próxima dosis (opcional)</label><input type="date" id="v-prox"></div>
+      </div>
+    </div>
+    <div class="cerrar-fila">
+      <button type="button" class="btn btn-suave" data-cerrar>Cerrar</button>
+      <button class="btn btn-ok" type="submit" id="btn-reg">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/veterinario.js"></script>
+</body>
+</html>

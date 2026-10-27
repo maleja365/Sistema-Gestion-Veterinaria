@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propietario | VetCare</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="panel">
+  <aside class="lateral">
+    <div class="logo"><img src="img/logo.svg" alt=""><span>VetCare<small>PROPIETARIO</small></span></div>
+    <p class="menu-etiqueta">MENÚ</p>
+    <button class="menu" data-vista="mascotas">🐾 Mis mascotas</button>
+    <button class="menu" data-vista="solicitar">📅 Solicitar cita</button>
+    <button class="menu" data-vista="citas">🗂️ Mis citas</button>
+    <div class="usuario-box">
+      <div class="avatar" id="u-avatar">P</div>
+      <div><strong id="u-nombre">…</strong><small>Propietario</small></div>
+      <button class="salir" id="btn-salir" title="Cerrar sesión">⏻</button>
+    </div>
+  </aside>
+
+  <main class="principal">
+    <div class="banner">
+      <div>
+        <h2>¡Hola! Cuida a tus peluditos 💙</h2>
+        <p>Registra tus mascotas, pide citas y revisa su historial médico y vacunas.</p>
+      </div>
+      <div class="trio"><img src="img/perro.svg" alt=""><img src="img/gato.svg" alt=""><img src="img/conejo.svg" alt=""></div>
+    </div>
+
+    <!-- MIS MASCOTAS -->
+    <section class="vista" id="vista-mascotas">
+      <div class="cabecera">
+        <div><span class="etiqueta">MIS MASCOTAS</span><h1>Mi familia peluda</h1></div>
+        <button class="btn" id="btn-nueva">+ Registrar mascota</button>
+      </div>
+      <div id="lista-mascotas" class="mascotas"></div>
+    </section>
+
+    <!-- SOLICITAR CITA -->
+    <section class="vista" id="vista-solicitar" hidden>
+      <div class="cabecera"><div><span class="etiqueta">CITAS</span><h1>Solicitar cita</h1></div></div>
+      <div class="tarjeta">
+        <div id="err-cita" class="alerta alerta-error" hidden></div>
+        <form id="form-cita">
+          <div class="fila">
+            <div><label>Mascota</label><select id="c-mascota" required></select></div>
+            <div><label>Veterinario</label><select id="c-vet" required></select></div>
+          </div>
+          <label>Fecha y hora</label>
+          <input type="datetime-local" id="c-fecha" required>
+          <label>Motivo de la consulta</label>
+          <textarea id="c-motivo" maxlength="250" required></textarea>
+          <button class="btn" style="margin-top:20px" type="submit">Solicitar cita</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- MIS CITAS -->
+    <section class="vista" id="vista-citas" hidden>
+      <div class="cabecera"><div><span class="etiqueta">CITAS</span><h1>Mis citas</h1></div></div>
+      <div class="tarjeta"><div class="tabla-wrap" id="tabla-citas"></div></div>
+    </section>
+  </main>
+</div>
+
+<!-- Formulario de mascota -->
+<dialog id="dlg-mascota">
+  <h3 id="t-mascota">Registrar mascota</h3>
+  <div id="err-mascota" class="alerta alerta-error" hidden></div>
+  <form id="form-mascota">
+    <div class="fila">
+      <div><label>Nombre</label><input id="m-nombre" maxlength="100" required></div>
+      <div><label>Especie</label>
+        <select id="m-especie" required>
+          <option value="Perro">🐶 Perro</option>
+          <option value="Gato">🐱 Gato</option>
+          <option value="Conejo">🐰 Conejo</option>
+          <option value="Loro">🦜 Loro</option>
+          <option value="Hámster">🐹 Hámster</option>
+          <option value="Pez">🐠 Pez</option>
+          <option value="Iguana">🦎 Iguana</option>
+          <option value="Otro">🐾 Otro</option>
+        </select></div>
+    </div>
+    <div id="caja-otra" hidden>
+      <label for="m-otra">¿Qué animal es?</label>
+      <input id="m-otra" maxlength="50" placeholder="Ej: Tortuga, Cuy, Hurón...">
+    </div>
+    <div class="fila">
+      <div><label>Raza (opcional)</label><input id="m-raza" maxlength="80"></div>
+      <div><label>Sexo</label>
+        <select id="m-sexo"><option value="">Sin especificar</option><option>Macho</option><option>Hembra</option></select></div>
+    </div>
+    <label>Fecha de nacimiento (opcional)</label>
+    <input type="date" id="m-nacimiento">
+    <div class="cerrar-fila">
+      <button type="button" class="btn btn-suave" data-cerrar>Cancelar</button>
+      <button class="btn" type="submit">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Historial y vacunas -->
+<dialog id="dlg-clinico">
+  <div class="cab-dialogo"><img id="cl-img" src="img/otro.svg" alt=""><h3 id="cl-titulo"></h3></div>
+  <div id="cl-contenido"></div>
+  <div class="cerrar-fila"><button class="btn btn-suave" data-cerrar>Cerrar</button></div>
+</dialog>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/propietario.js"></script>
+</body>
+</html>

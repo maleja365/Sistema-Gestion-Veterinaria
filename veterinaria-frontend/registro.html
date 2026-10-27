@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de propietario | VetCare</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<main class="auth">
+  <section class="auth-marca">
+    <span class="etiqueta">ÚNETE A VETCARE</span>
+    <h1>Crea tu cuenta</h1>
+    <p>Registra a tus mascotas, solicita citas y consulta su historial médico y vacunas.</p>
+    <div class="trio">
+      <img src="img/perro.svg" alt="Perro">
+      <img src="img/gato.svg" alt="Gato">
+      <img src="img/conejo.svg" alt="Conejo">
+    </div>
+  </section>
+
+  <section class="auth-form">
+    <div class="auth-caja">
+      <span class="etiqueta" style="color:var(--blue-600)">PROPIETARIOS</span>
+      <h2>Registrarse</h2>
+      <p class="sub">Solo los propietarios se registran solos. Los veterinarios los crea el administrador.</p>
+
+      <div id="msg-error" class="alerta alerta-error" hidden></div>
+
+      <form id="form-registro">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" maxlength="100" required>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" maxlength="120" required>
+
+        <label for="password">Contraseña (mínimo 8 caracteres)</label>
+        <input type="password" id="password" minlength="8" required>
+
+        <button class="btn btn-block" type="submit">Crear cuenta</button>
+      </form>
+
+      <p class="auth-pie">¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+    </div>
+  </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/ver-password.js"></script>
+<script>
+document.getElementById('form-registro').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const error = document.getElementById('msg-error');
+  error.hidden = true;
+  try {
+    await api('/api/auth/registro', {
+      metodo: 'POST',
+      cuerpo: {
+        nombre: document.getElementById('nombre').value,
+        correo: document.getElementById('correo').value,
+        password: document.getElementById('password').value
+      }
+    });
+    location.href = 'index.html?registrado=1';
+  } catch (err) {
+    error.textContent = err.message;
+    error.hidden = false;
+  }
+});
+</script>
+</body>
+</html>

@@ -125,54 +125,9 @@ mvn spring-boot:run
 
 El puerto del backend depende de la configuración de Spring Boot y debe verificarse en sus archivos de configuración o en la consola de ejecución.
 
+**Documentación de la API:** http://localhost:8080/swagger-ui/index.html#/
 
-## 8. Diseño de la base de datos
-
-La base de datos almacena la información necesaria para la gestión de usuarios, mascotas y procesos veterinarios.
-
-Esta sección debe incluir:
-
-- Diagrama entidad-relación.
-- Tablas y campos implementados.
-- Claves primarias y foráneas.
-- Relaciones entre las entidades.
-- Script SQL para crear o importar la base de datos, si está disponible.
-
-**Diagrama de la base de datos:**
-
-
-
-## 9. Operaciones CRUD
-
-CRUD corresponde a las operaciones básicas de gestión de datos:
-
-- **Create:** crear registros.
-- **Read:** consultar registros.
-- **Update:** actualizar registros.
-- **Delete:** eliminar registros.
-
-En esta sección se deben documentar los CRUD implementados en VetCare, indicando las entidades que los utilizan y las pruebas realizadas.
-
-Para la entrega académica se debe demostrar al menos un CRUD por cada integrante del equipo, con evidencias de las operaciones realizadas.
-
-## 10. Pruebas de funcionamiento
-
-Se deben realizar pruebas para verificar:
-
-- Registro e inicio de sesión.
-- Gestión de mascotas.
-- Gestión de usuarios y veterinarios.
-- Solicitud y administración de citas.
-- Registro y consulta de diagnósticos y vacunas.
-- Comunicación entre el frontend y el backend.
-- Conexión con la base de datos.
-- Permisos correspondientes a cada rol.
-
-**Documentación de la API:** agregar la dirección de Swagger si se encuentra configurado en el backend.
-
-## 11. Evidencias del proyecto
-
-Se deben recopilar las siguientes evidencias:
+## 8. Evidencias del proyecto
 
 - Diagrama de la base de datos.
 - <img width="673" height="857" alt="image" src="https://github.com/user-attachments/assets/de3716f8-0908-424f-a928-3138a19473a4" />
@@ -196,14 +151,14 @@ Se deben recopilar las siguientes evidencias:
 - Enlace al tablero de Jira.
 - https://malejaestrada31.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=assignee&atlOrigin=eyJpIjoiMzY2NDg0ODE1ZWU2NGY0N2JkODIzNDFkZjI3ZDMwMGUiLCJwIjoiaiJ9
 
-## 12. Control de versiones
+## 9. Control de versiones
 
 El proyecto utiliza Git y GitHub para almacenar el código fuente y registrar los cambios realizados durante el desarrollo.
 
 
 **Repositorio:** https://github.com/maleja365/Sistema-Gestion-Veterinaria
 
-## 13. Estado del proyecto
+## 10. Estado del proyecto
 
 VetCare se encuentra en desarrollo. Las funcionalidades, pruebas y documentación se completarán progresivamente hasta cumplir los requisitos establecidos para la entrega final.
 
